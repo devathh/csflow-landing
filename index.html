@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>csflow - Rent CS2 Skins</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #000000;
+            --text-color: #FFFFFF;
+            --accent-color: #8A2BE2;
+            --card-bg: #0F0F0F;
+            --border-radius: 10px;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-top: 80px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            opacity: 0.8;
+            transition: var(--transition);
+            border-radius: var(--border-radius);
+            padding: 8px 12px;
+        }
+        
+        .nav-links a:hover {
+            opacity: 1;
+            color: var(--accent-color);
+            background-color: rgba(138, 43, 226, 0.1);
+        }
+        
+        /* Sections */
+        section {
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 150px 0;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+            background: linear-gradient(to right, #FFFFFF, #C5A2FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            opacity: 0.8;
+            margin-bottom: 40px;
+        }
+        
+        .cta-button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            background-color: #7a1ad2;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(138, 43, 226, 0.2);
+        }
+        
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .feature-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border: 1px solid rgba(138, 43, 226, 0.2);
+        }
+        
+        .feature-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .feature-desc {
+            opacity: 0.8;
+        }
+        
+        .creators {
+            margin-top: 50px;
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+        
+        /* Uniqueness Section */
+        .uniqueness {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 60px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Giveaways Section */
+        .giveaways {
+            text-align: center;
+        }
+        
+        .join-telegram {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 10px;
+            transition: var(--transition);
+        }
+        
+        .join-telegram:hover {
+            text-decoration: underline;
+        }
+        
+        /* Feedback Section */
+        .feedback {
+            text-align: center;
+            padding: 60px 0;
+        }
+        
+        .feedback-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+        }
+        
+        .feedback-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-decoration: underline;
+            text-decoration-color: var(--accent-color);
+            text-underline-offset: 8px;
+        }
+        
+        .feedback-email {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 30px 0;
+            text-align: center;
+            opacity: 0.7;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .nav-links {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .uniqueness {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#uniqueness">Why Us</a>
+                <a href="#giveaways">Giveaways</a>
+                <a href="#feedback">Feedback</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Rent. Play. Profit.</h1>
+        <p>csflow: a secure, low-commission platform to rent and monetize CS2 skins.</p>
+    </section>
+    
+    <!-- Features Section -->
+    <section id="features">
+        <div class="container">
+            <h2 class="section-title">Core Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3 class="feature-title">Steam Login</h3>
+                    <p class="feature-desc">One-click authorization through your Steam account for seamless access.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3 class="feature-title">Deposits</h3>
+                    <p class="feature-desc">• 🇷🇺 Russia: Instant via SBP<br>• 🌍 International: Crypto (USDT, BTC, ETH)</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3 class="feature-title">100% Guaranteed Trades</h3>
+                    <p class="feature-desc">CSFLOW acts as escrow ensuring all trades are completed safely.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3 class="feature-title">Transparent Support</h3>
+                    <p class="feature-desc">Clear fee structure with 24/7 human support to assist with any issues.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Uniqueness Section -->
+    <section id="uniqueness">
+        <div class="container">
+            <div class="uniqueness">
+                <h2 class="section-title">No Analogues in Russia</h2>
+                <p class="section-subtitle">CSFLOW is the first and only CS2 skin rental service of its kind on the Russian market—offering a truly unique opportunity.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Giveaways Section -->
+    <section id="giveaways">
+        <div class="container giveaways">
+            <h2 class="section-title">Win Skins Every Week</h2>
+            <p class="section-subtitle">Active CSFLOW users are automatically entered into weekly raffles for free CS2 skins.</p>
+            <a href="https://t.me/csflow_w" class="join-telegram">Join Telegram</a>
+        </div>
+    </section>
+    
+    <!-- Feedback Section -->
+    <section id="feedback" class="feedback">
+        <div class="container">
+            <div class="feedback-content">
+                <h2 class="feedback-title">We're actively improving CSFLOW — your feedback matters. If you want to sign up for the beta test, please email</h2>
+                <p class="feedback-email">csflow.ww@gmail.com</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 CSFLOW. All rights reserved.</p>
+        </div>
+        <p class="creators">Built by Ilzim76 & Atheros</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        document.getElementById('illuse').addEventListener('click', () => {
+            fetch("/api/v1/counter", {
+                method: "POST",
+                body: JSON.stringify({"yeah": true})
+            })
+        })
+    </script>
+</body>
+</html>
